@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/lib/vue.min.js"></script>
+    <title>Vue 示例3</title>
+</head>
+<body>
+    <div id="demo3">
+        <h1>site:{{site}}</h1>
+        <h1>url:{{url}}</h1>
+        <h1>alexa:{{ alexa }}</h1>
+    </div>
+</body>
+<script>
+    // 我们的数据对象
+    var data = { site: "菜鸟教程", url: "www.runoob.com", alexa: 10000}
+    var vm = new Vue({
+        el: '#demo3',
+        data: data
+    })
+    document.write(vm.site === data.site)
+    document.write("<br>")
+    vm.site = "Runoob"
+    document.write(vm.site)
+    data.alexa = 300
+    document.write("<br>")
+    document.write(vm.alexa)
+</script>
+</html>

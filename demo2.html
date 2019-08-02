@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/lib/vue.min.js"></script>
+    <title>Vue 示例2</title>
+</head>
+<body>
+    <div id="vue_det">
+        <p>site:{{ site }}</p>
+        <p>url:{{url}}</p>
+        <p>{{details()}}</p>
+        <p>{{ details()}}</p>
+    </div>
+    
+</body>
+<script>
+    new Vue({
+        el:'#vue_det',
+        data:{
+            site:'菜鸟驿站',
+            url:'www.ruboon.com',
+            alexa: "10000"
+        },
+        methods:{
+            details:function(){
+                return this.site + '学的不仅是技术，还有梦想'
+            }
+        }
+    })
+</script>
+</html>

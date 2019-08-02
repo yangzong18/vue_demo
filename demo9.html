@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/lib/vue.min.js"></script>
+    <title>Vue 示例9</title>
+</head>
+<body>
+    <div id="demo9">
+        <pre><a v-bind:href="href">菜鸟教程</a></pre>
+    </div>
+</body>
+<script>
+    // 我们的数据对象
+    var vm = new Vue({
+        el: '#demo9',
+        data:{
+            href:'http://www.runoob.com',
+
+        }
+    })
+</script>
+</html>

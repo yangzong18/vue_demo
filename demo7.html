@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/lib/vue.min.js"></script>
+    <title>Vue 示例7</title>
+</head>
+<style>
+#list-1 {
+    background: #000;
+    color:#fff;
+}
+</style>
+<body>
+    <div id="demo7">
+        {{5+5}}
+        <br>
+        {{ok ? 'Yes':'No'}}
+        <br>
+        {{message.split('').reverse().join('')}}
+        <div v-bind:id="'list-'+id">菜鸟教程</div>
+    </div>
+</body>
+<script>
+    // 我们的数据对象
+    var vm = new Vue({
+        el: '#demo7',
+        data:{
+            ok:true,
+            use:false,
+            message:'Runoob',
+            id:1
+        }
+    })
+</script>
+</html>

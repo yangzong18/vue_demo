@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/lib/vue.min.js"></script>
+    <title>Vue 示例8</title>
+</head>
+<style>
+#list-1 {
+    background: #000;
+    color:#fff;
+}
+</style>
+<body>
+    <div id="demo8">
+        <div v-if='see'>你现在可以看到我了</div>
+        <template v-if="ok">
+                <h1>菜鸟教程</h1>
+                <p>学的不仅是技术，更是梦想！</p>
+                <p>哈哈哈，打字辛苦啊！！！</p>
+              </template>
+    </div>
+</body>
+<script>
+    // 我们的数据对象
+    var vm = new Vue({
+        el: '#demo8',
+        data:{
+            see:true,
+            ok:true
+        }
+    })
+</script>
+</html>
