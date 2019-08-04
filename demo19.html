@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo 19</title>
+    <script src="./js/lib/vue.min.js"></script>
+</head>
+<style>
+table {
+    border: 1px solid black;
+}
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+</style>
+<body>
+    <div id="demo19">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>商品名字</th>
+                <th>数量</th>
+                <th>商家价格</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="iphone in Ip_Json">
+                    <td>{{ iphone.id }}</td>
+                    <td>{{ iphone.name }}</td>
+                    <td>{{ iphone.price }}</td>
+                    <td>
+                    <button v-bind:disabled="iphone.count === 0" v-on:click="iphone.count-=1">-</button>
+                    {{ iphone.count }}
+                    <button v-on:click="iphone.count+=1">+</button>
+                    </td>
+                    <td>
+                    <button v-on:click="iphone.count=0">移除</button>
+                    </td>
+                </tr>
+                </table>
+                总价：${{totalPrice()}}
+            
+        </table>
+    </div>
+</body>
+<script>
+new Vue({
+    el:'#demo19',
+    data:{
+        Ip_Json:[
+            {
+                'id':1,
+                'name':'iphone 5',
+                'price':'3500',
+                'count':2
+            },
+            {
+                'id':2,
+                'name':'iphone 6',
+                'price':'4000',
+                'count':2
+            },
+            {
+                'id':2,
+                'name':'iphone XR',
+                'price':'8000',
+                'count':2
+            }
+        ]
+    },
+    methods: {
+        totalPrice:function(){
+            var totalP = 0;
+            for (var i = 0,len = this.Ip_Json.length;i<len;i++) {
+                totalP+=this.Ip_Json[i].price*this.Ip_Json[i].count;
+            }
+            return totalP;
+        }
+    },
+})
+</script>
+</html>

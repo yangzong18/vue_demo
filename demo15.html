@@ -27,12 +27,19 @@
         <ul>
                 <li v-for="(value,key,index) in object">{{index}}.{{key}}:{{value}}</li>
         </ul>
+        <ul>
+            <li v-for="n in 10">{{n}}</li>
+        </ul>
+        <p>原始字符串: {{ message }}</p>
+        <p>计算后反转字符串: {{ reversedMessage }}</p>
     </div>
+        
 </body>
 <script>
     new Vue({
         el:'#demo15',
         data:{
+            message:'Runoob',
             sites:[
                 {'name':'walker'},
                 {'name':'Nelo'},
@@ -43,7 +50,12 @@
                 url:'https://www.baidu.com',
                 name:'菜鸟一站'
             }
-        }
+        },
+        computed: {
+            reversedMessage:function(){
+                return this.message.split('').reverse().join('')
+            }
+        },
     })
 </script>
 </html>
