@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Demo 15</title>
+    <script src="./js/lib/vue.min.js"></script>
+</head>
+<body>
+    <div id="demo15">
+        <div v-for="site in sites">
+            {{site.name}}
+        </div>
+        <ul>
+            <template v-for="site in sites">
+                <li>{{site.name}}</li>
+                <li>-------------------</li>
+            </template>
+        </ul>
+        <ul>
+            <li v-for="site in sites">{{site.name}}</li>
+        </ul>
+        <ul>
+            <li v-for="value in object">{{value}}</li>
+        </ul>
+        <ul>
+                <li v-for="(value,key,index) in object">{{index}}.{{key}}:{{value}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#demo15',
+        data:{
+            sites:[
+                {'name':'walker'},
+                {'name':'Nelo'},
+                {'name':'Peter'}
+            ],
+            object:{
+                id:1,
+                url:'https://www.baidu.com',
+                name:'菜鸟一站'
+            }
+        }
+    })
+</script>
+</html>
