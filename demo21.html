@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document Demo 21</title>
+    <script src="./js/lib/vue.min.js"></script>
+</head>
+<body>
+    <div id="demo21">
+        <p>input元素：</p>
+        <input v-model="message" placeholder="编辑我……"/>
+        <p>消息是{{message}}</p>
+        <p>textarea 元素：</p>
+        <p style="white-space: pre">{{ message2 }}</p>
+        <textarea v-model="message2" placeholder="多行文本输入……"></textarea>
+    </div>
+    
+</body>
+<script>
+var vm = new Vue({
+    el:'#demo21',
+    data:{
+        message:'Runoob',
+        message2:'百度\r\nhttps://www.baidu.com'
+    }
+
+})
+</script>
+</html>
